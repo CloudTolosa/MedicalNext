@@ -15,6 +15,22 @@ a {
   box-sizing: border-box;
 }
 
+.bigIcons {
+  font-size: 30px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+}
+
+
+.colorBettiOn{
+  color: #094067
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

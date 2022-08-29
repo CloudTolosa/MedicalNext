@@ -1,43 +1,9 @@
 import React, {useState, useEffect} from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../../components/Layout";
 import Head from "next/head";
 import Image from "next/image"
-import avatar from "../../images/img_avatar.png"
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import LineChart from "../../components/chart/LineChart";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart',
-    },
-  },
-  
-};
+import avatar from "../../../images/img_avatar.png"
+import LineChart from "../../../components/chart/LineChart";
 
 const  labels= ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
 
@@ -81,7 +47,7 @@ const data2 = [
   },
 ]
 
-export default function paciente() {
+export default function patient() {
 
   const [datos, setDatos] = useState({ });
   const [dataLine, setDataLine] = useState()

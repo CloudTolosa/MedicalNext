@@ -1,0 +1,32 @@
+.containerPrincipal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2em;
+    padding: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+
+    background-color: rgba(255, 255, 255, 0.911);
+}
+.containerSecundario{
+    text-align: center;
+    padding:20px
+}
+
+.welcomer{
+    height: 100vh;
+    background-image: url("../images/heartbackground2.jpg");
+    background-size: cover;
+    background-color: pink;
+}
+
+.logo {
+    width: 100%;
+}
+
+.blueHealth {
+    background-color: #3da9fc;
+    align-items: center;
+  }
