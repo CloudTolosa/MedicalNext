@@ -69,8 +69,6 @@ const LineChart = ({label, title, dataLines, width, height }) => {
     datasets: dataLines
   };
 
-  console.log(data)
-
   return <Line data={data} width={width} height={height} options={options}/>;
 };
 
