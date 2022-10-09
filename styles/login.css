@@ -7,8 +7,7 @@
     padding: 40px;
     padding-left: 60px;
     padding-right: 60px;
-
-    background-color: rgba(255, 255, 255, 0.911);
+    background-color: white;
 }
 .containerSecundario{
     text-align: center;
@@ -17,9 +16,9 @@
 
 .welcomer{
     height: 100vh;
-    background-image: url("../images/heartbackground2.jpg");
+    background-image: url("../assets/images/heartbackground2.jpg");
     background-size: cover;
-    background-color: pink;
+    background-color: #ef4565;
 }
 
 .logo {
@@ -30,3 +29,7 @@
     background-color: #3da9fc;
     align-items: center;
   }
+
+.containerlogo{
+    background-color: #ef4565;
+}

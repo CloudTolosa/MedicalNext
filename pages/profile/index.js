@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import Head from "next/head";
-import avatar from "../../images/img_avatar.png";
+import avatar from "../../assets/images/img_avatar.png";
+import AxiosApi from "../../services/Axios";
 
 export default function profile() {
   const [datos, setDatos] = useState({
@@ -12,6 +13,18 @@ export default function profile() {
     edad: 40,
     telefonos: 3234345566,
   });
+
+  useEffect(() => {
+    const getDataProfile = () => {
+      AxiosApi.get(`api/users/me`).then((response) => {
+        let datosApi = response.data;
+        console.log("esto es data",datosApi)
+        //setDatos(datosApi);
+      });
+    };
+    getDataProfile();
+  }, []);
+  
   return (
     <>
       <Head>
@@ -47,7 +60,14 @@ export default function profile() {
               <p className="h5">{datos.telefonos}</p>
             </div>
             <div className="col-md-6 col-12 p-2">
-              <Image src={avatar} alt="logo bettiOn" className="avatar" />
+              <Image
+                src={avatar}
+                className="avatar"
+                alt="avatar"
+                width={200}
+                height={200}
+                objectFit="contain"
+              />
             </div>
           </div>
         </section>

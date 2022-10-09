@@ -3,7 +3,7 @@ import Layout from "../../../components/Layout";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
-import avatar from "../../../images/img_avatar.png";
+import avatar from "../../../assets/images/img_avatar.png";
 import LineChart from "../../../components/chart/LineChart";
 
 const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
@@ -99,8 +99,15 @@ export default function patient() {
               </p>
               <p className="h5">{datos.telefono}</p>
             </div>
-            <div className="col-3 px-4">
-              <Image src={avatar} alt="logo bettiOn" className="avatar" />
+            <div className="col">
+            <Image
+                src={avatar}
+                className="avatar"
+                alt="avatar"
+                width={200}
+                height={200}
+                objectFit="contain"
+              />
             </div>
           </div>
           <div className="row">
@@ -127,11 +134,11 @@ export default function patient() {
               </p>
               <input type="date" className="form-control" />
             </div>
-            <div className="col">
+            <div className="col pt-4  d-flex justify-content-start align-items-center">
               <button className="btn bg-primary text-white">Buscar</button>
             </div>
             <div className="row pt-4">
-              <div className="col">
+              <div className="col-md-6 col-sm-12">
                 <LineChart
                   title="Registro Tension Arterial"
                   dataLines={data1}
@@ -140,7 +147,7 @@ export default function patient() {
                   label={labels}
                 />
               </div>
-              <div className="col">
+              <div className="col-md-6 col-sm-12">
                 <LineChart
                   title="Ritmo Cardiaco"
                   dataLines={data2}

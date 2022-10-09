@@ -31,6 +31,10 @@ a {
   color: #094067
 }
 
+.App-icon {
+  height: 4vmin;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

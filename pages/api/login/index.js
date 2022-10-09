@@ -3,20 +3,30 @@ import Image from "next/image";
 import logo from "../assets/images/original_icon.png";
 import { useRouter } from "next/router";
 //import { useAuth } from "../context/AuthContext";
-import { initFirebase, auth } from "../services/firebase";
+import { initFirebase } from "../services/firebase";
+import { auth } from "../config/firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 const Login = () => {
+  //const router = useRouter();
 
-  const router = useRouter();
   const app = initFirebase();
+  //const auth = getAuth();
   console.log(app);
 
   const countryCode = "+57";
 
+  //const { user, login } = useAuth();
   const [phoneNumber, setPhoneNumber] = useState(countryCode);
   const [expandForm, setExpandForm] = useState(false);
   const [OTP, setOTP] = useState();
+
+  const handleInputChange = (event) => {
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const generateRecaptcha = () => {
     window.recaptchaVerifier = new RecaptchaVerifier(
@@ -62,8 +72,12 @@ const Login = () => {
         const user = result.user;
         console.log(result)
         console.log(user)
-        localStorage.setItem('jwtToken', result.user.accessToken);
-        router.push("/home");
+       /*  return { redirect: {
+          destination: '/home',
+          permanent: false,
+        }, 
+      }*/
+        // ...
       }).catch((error) => {
         // User couldn't sign in (bad verification code?)
         console.log(error);
@@ -105,6 +119,7 @@ const Login = () => {
                     placeholder="phoneNumber"
                     defaultValue={phoneNumber}
                     className="form-control"
+                    //onChange={handleInputChange}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     name="phoneNumber"
                   />
@@ -119,6 +134,7 @@ const Login = () => {
                     <input
                       defaultValue={OTP}
                       className="form-control"
+                      //onChange={handleInputChange}
                       onChange={(e) => setOTP(e.target.value)}
                       name="phoneNumber"
                     />

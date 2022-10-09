@@ -54,29 +54,18 @@
 
 .nav-text:hover {
   transition: transform .3s;
-  border-color: #ef4565;
-  border-style: solid;
+  /* border-color: #ef4565 ; */
+  border-left-color: #ef4565;
+  border-left-style:solid;
+  border-left-width:10px;
   width: 100%;
   height:60px;
   cursor: pointer;
-  border-radius:10px;
 }
 
 .nav-text-logo {
-  text-decoration: none;
-  justify-content: space-between;
   display: flex;
-  margin-left:-20px;
-}
-
-.nav-text-logo:hover {
-  transition: transform .3s;
-  border-color: #ef4565;
-  border-style: solid;
-  width: 100%;
-  height:80px;
-  cursor: pointer;
-  border-radius:10px;
+  margin-left:-36px;
 }
 
 .nav-menu-items {
